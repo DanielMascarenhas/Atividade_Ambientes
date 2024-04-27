@@ -1,0 +1,21 @@
+<meta charset="UTF-8">
+<script>
+var N = parseInt(prompt("Digite o primeiro número:"));
+var N2 = parseInt(prompt("Digite o segundo número:"));
+
+if (isNaN(N) || isNaN(N2)) {
+    document.write("Por favor, digite números válidos para os dados.");
+} else {
+    var primeiroDado = Math.min(N, N2);
+    var segundoDado = Math.max(N, N2);
+    var contagem = 0;
+
+    for (var i = primeiroDado; i <= segundoDado; i++) {
+        contagem++;
+    }
+
+    document.write("Existem " + contagem + " valores inteiros entre " + primeiroDado + " e " + segundoDado + ".");
+}
+
+
+</script>

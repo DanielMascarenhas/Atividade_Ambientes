@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8"/>
+</head> 
+<script>
+    var input = prompt("Digite os números separados por vírgula:");
+var numeros = input.split(',').map(Number);
+
+var trocarElementos = function(array, indiceA, indiceB) {
+    var temp = array[indiceA];
+    array[indiceA] = array[indiceB];
+    array[indiceB] = temp;
+};
+
+var quicksort = function(array, inicio, fim) {
+    if (inicio < fim) {
+        var indiceParticao = inicio;
+        var pivo = array[fim];
+        
+        for (var i = inicio; i < fim; i++) {
+            if (array[i] < pivo) {
+                trocarElementos(array, i, indiceParticao);
+                indiceParticao++;
+            }
+        }
+        
+        trocarElementos(array, indiceParticao, fim);
+        
+        quicksort(array, inicio, indiceParticao - 1);
+        quicksort(array, indiceParticao + 1, fim);
+    }
+};
+
+quicksort(numeros, 0, numeros.length - 1);
+
+document.write("Array ordenado: " + numeros.join(', '));
+
+</script>
