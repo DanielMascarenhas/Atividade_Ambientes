@@ -1,0 +1,32 @@
+body{
+    background-color: rgb(40, 34, 34);
+}
+
+h1, h2, h3{
+    color: white;
+}
+
+header{
+    background-color: rgb(91, 114, 177);
+    align-items: center;
+    width: 100%;
+}
+
+#soma-subtracao{
+    justify-content: center;
+}
+#central{
+    align-items: center;
+    margin-inline-start: 450px;
+}
+
+.botao {
+    border-radius: 20px; /* Você pode ajustar este valor para controlar o quão redondo você quer que o botão seja */
+    padding: 10px 20px; /* Ajuste o preenchimento conforme necessário */
+    font-size: 16px; /* Ajuste o tamanho da fonte conforme necessário */
+    background-color: #007bff; /* Cor de fundo do botão */
+    color: #fff; /* Cor do texto do botão */
+    border: none; /* Remova a borda padrão */
+    margin-left: 10;
+    margin-right: 10;
+}

@@ -10,6 +10,18 @@ function soma(a, b) {
   return a + b;
 }
 
+function subtracao(a, b) {
+  return a - b;
+}
+
+function multiplicacao(a, b) {
+  return a * b;
+}
+
+function divisao(a, b) {
+  return a / b;
+}
+
 app.post('/soma', function (req, res) {
   console.log('Dados recebidos:', req.body); // Adicione este log para verificar os dados recebidos
   var body = req.body;
@@ -20,6 +32,42 @@ app.post('/soma', function (req, res) {
 
   var resultado = soma(Number(dado1), Number(dado2));
   res.send(`O resultado da soma de ${dado1} e ${dado2} é ${resultado}`);
+});
+
+app.post('/subtracao', function (req, res) {
+  console.log('Dados recebidos:', req.body); // Adicione este log para verificar os dados recebidos
+  var body = req.body;
+  var dado1 = body.dado1;
+  var dado2 = body.dado2;
+  console.log('Dado1:', dado1); // Adicione este log para verificar o valor de dado1
+  console.log('Dado2:', dado2); // Adicione este log para verificar o valor de dado2
+
+  var resultado = subtracao(Number(dado1), Number(dado2));
+  res.send(`O resultado da subtração de ${dado1} e ${dado2} é ${resultado}`);
+});
+
+app.post('/multiplicacao', function (req, res) {
+  console.log('Dados recebidos:', req.body); // Adicione este log para verificar os dados recebidos
+  var body = req.body;
+  var dado1 = body.dado1;
+  var dado2 = body.dado2;
+  console.log('Dado1:', dado1); // Adicione este log para verificar o valor de dado1
+  console.log('Dado2:', dado2); // Adicione este log para verificar o valor de dado2
+
+  var resultado = multiplicacao(Number(dado1), Number(dado2));
+  res.send(`O resultado da multiplicação de ${dado1} e ${dado2} é ${resultado}`);
+});
+
+app.post('/divisao', function (req, res) {
+  console.log('Dados recebidos:', req.body); // Adicione este log para verificar os dados recebidos
+  var body = req.body;
+  var dado1 = body.dado1;
+  var dado2 = body.dado2;
+  console.log('Dado1:', dado1); // Adicione este log para verificar o valor de dado1
+  console.log('Dado2:', dado2); // Adicione este log para verificar o valor de dado2
+
+  var resultado = divisao(Number(dado1), Number(dado2));
+  res.send(`O resultado da divisão de ${dado1} e ${dado2} é ${resultado}`);
 });
 
 
